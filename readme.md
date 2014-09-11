@@ -14,12 +14,12 @@ inconsistent working copies amongst developers.
 This extension allows you to create static blocks on the fly from within your layout file, prepopulating it with content
 (if you so wish) or adding a basic "I am this block" message.
 
-#Installation
+##Installation
 
     modman clone git@github.com:meanbee/magento-admin-editable.git
     modman deploy magento-admin-editable
 
-#Usage
+##Usage
 
 The following examples will create blocks only if they do not already exist.  If they already exist then no creation logic will be run, and the block will be output -- just like if you'd made a `cms/block` block instead.
 
