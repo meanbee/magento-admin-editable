@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Meanbee_AdminEditable>
+            <version>0.1.0</version>
+        </Meanbee_AdminEditable>
+    </modules>
+    <global>
+        <blocks>
+            <meanbee_admineditable>
+                <class>Meanbee_AdminEditable_Block</class>
+            </meanbee_admineditable>
+        </blocks>
+        <helpers>
+            <meanbee_admineditable>
+                <class>Meanbee_AdminEditable_Helper</class>
+            </meanbee_admineditable>
+        </helpers>
+    </global>
+</config>
