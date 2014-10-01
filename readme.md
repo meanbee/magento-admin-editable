@@ -6,8 +6,8 @@ solution to this in Magento is to use a static block.  At this point, you have t
 * reference a static block in the layout file, and manually create it on dev, staging, prod, etc.
 * add an installation script to create the block.
 
-If you're doing it right™ then you'll us using the latter, and writing a setup script to automatically create the block
-for you on deployment.  Writing setup scripts are a pain in the ass, especially if you have multiple developers working
+If you're doing it right™ then you'll be using the latter, and writing a setup script to automatically create the block
+for you on deployment.  Writing setup scripts is a pain in the ass, especially if you have multiple developers working
 on the same project, commiting changes, and bumping the resource versions.  This can lead to problematic merge conflicts and
 inconsistent working copies amongst developers.
 
