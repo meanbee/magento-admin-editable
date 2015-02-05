@@ -48,9 +48,8 @@ class Meanbee_AdminEditable_Block_Content extends Mage_Core_Block_Abstract {
         ));
 
         $template_file = Mage::getBaseDir('design') . DIRECTORY_SEPARATOR . $template_file;
-        $this->setData($key, $template_file);
 
-        return $this->getData($key);
+        return $template_file;
     }
 
     /**
