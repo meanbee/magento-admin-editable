@@ -38,19 +38,18 @@ class Meanbee_AdminEditable_Block_Content extends Mage_Core_Block_Abstract {
      */
     public function getStaticBlockDefaultTemplate() {
         $key = 'static_block_default_template';
-
         if (!$this->hasData($key)) {
             $candidate_template = sprintf("static_blocks/%s.phtml", $this->getStaticBlockId());
-            $template_file = Mage::getDesign()->getTemplateFilename($candidate_template, array(
-                '_relative' => true
-            ));
-
-            $template_file = Mage::getBaseDir('design') . DIRECTORY_SEPARATOR . $template_file;
-
-            $this->setData($key, $template_file);
+        } else {
+            $candidate_template = $this->getData($key);
         }
+        $template_file = Mage::getDesign()->getTemplateFilename($candidate_template, array(
+            '_relative' => true
+        ));
 
-        return $this->getData($key);
+        $template_file = Mage::getBaseDir('design') . DIRECTORY_SEPARATOR . $template_file;
+
+        return $template_file;
     }
 
     /**
@@ -58,12 +57,9 @@ class Meanbee_AdminEditable_Block_Content extends Mage_Core_Block_Abstract {
      */
     public function getStaticBlockDefaultContent() {
         $key = 'static_block_default_content';
-
         if (!$this->hasData($key)) {
             $file_name = $this->getStaticBlockDefaultTemplate();
-
             $html = sprintf("This content is retrieved from the %s static block in the administration area.", $this->getStaticBlockId());
-
             if (file_exists($file_name) && is_readable($file_name)) {
                 $html = file_get_contents($file_name);
             }
